@@ -21,7 +21,7 @@ basename = "pyzmail"
 version = ""
 for line in open("pyzmail/version.py"):
     if line.startswith("__version__ ="):
-        version = line[16:].rstrip()[:-1]
+        version = line[15:].rstrip()[:-1]
         break
 
 if not version:
