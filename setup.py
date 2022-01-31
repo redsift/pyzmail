@@ -4,12 +4,9 @@
 # http://www.magiksys.net/pyzmail
 
 import sys
+from distribute_setup import use_setuptools
 
-if sys.version_info >= (3,):
-    # distribute is required for py3k
-    from distribute_setup import use_setuptools
-
-    use_setuptools()
+use_setuptools()
 
 import sys, os, shutil
 
@@ -23,8 +20,8 @@ basename = "pyzmail"
 # retrieve $version
 version = ""
 for line in open("pyzmail/version.py"):
-    if line.startswith("__version__="):
-        version = line[13:].rstrip()[:-1]
+    if line.startswith("__version__ ="):
+        version = line[16:].rstrip()[:-1]
         break
 
 if not version:
