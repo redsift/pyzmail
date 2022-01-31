@@ -1,3 +1,9 @@
+# Pyzmail
+
+Redsift's fork to support python 3
+
+# Original Readme
+
 pyzmail
 =======
 

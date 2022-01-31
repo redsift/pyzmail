@@ -90,7 +90,7 @@ class TestBoth(unittest.TestCase):
                 if found:
                     self.assertEqual(mailpart.type, attach[1]+'/'+attach[2])
                     payload=mailpart.get_payload()
-                    if attach[1]=='text' and attach[4] and isinstance(attach[0], unicode):
+                    if attach[1]=='text' and attach[4] and isinstance(attach[0], str):
                         payload=payload.decode(attach[4])
                     self.assertEqual(payload, attach[0])
                 else:

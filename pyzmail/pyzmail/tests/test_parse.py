@@ -263,14 +263,14 @@ bo\xc3\xaete mail = mailbox
             check(PyzMessage.factory(io.BytesIO(input)))
             check(message_from_binary_file(io.BytesIO(input)))
 
-        if isinstance(input, basestring):
+        if isinstance(input, str):
 
             check(PyzMessage.factory(input))
             check(message_from_string(input))
 
-            import StringIO
-            check(PyzMessage.factory(StringIO.StringIO(input)))
-            check(message_from_file(StringIO.StringIO(input)))
+            from io import StringIO
+            check(PyzMessage.factory(StringIO(input)))
+            check(message_from_file(StringIO(input)))
 
     def test_pyzmessage_factories(self):
         """test PyzMessage class different sources"""
